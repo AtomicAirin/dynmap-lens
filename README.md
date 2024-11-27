@@ -1,8 +1,8 @@
-# Minecraft Dynmap Time Machine
-
-[![Build Status](https://travis-ci.org/martinsik/minecraft-dynmap-timemachine.svg?branch=master)](https://travis-ci.org/martinsik/minecraft-dynmap-timemachine)
+# Dynmap Lens
 
 Python 2.7, 3.3+ and PyPy command line script that downloads tiles from a Minecraft's Dynmap plugin HTTP server and composes one image in extremely large resolution suitable for print.
+
+This package is based on the work of Martin Sikora in `dynmap_timemachine` ([repo](https://github.com/martinsik/minecraft-dynmap-timemachine/)). This version supports JPG Dynmaps; the original package only supported tiles in a PNG format. 
 
 ![Scaled down image](https://raw.githubusercontent.com/martinsik/minecraft-dynmap-timemachine/master/doc/majncraft.3320.crop.png)
 
