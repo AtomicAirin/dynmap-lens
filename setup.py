@@ -17,7 +17,8 @@ setup(
     name='dynmap_lens',
     version='1.0.0',
     description='Capture the contents of a Minecraft server\'s Dynmap. (Fork of dynmap_timemachine.)',
-    long_description=readme(),
+    long_description='This package captures the contents of a Minecraft server\'s Dynmap page; fork of dynmap_timemachine with added support for JPG tile formats.',
+    long_description_content_type='text/plain',
     url='https://github.com/martinsik/minecraft-dynmap-timemachine',
     # Note: This package is based on the work of Martin Sikora's dynmap_timemachine.
     # https://github.com/martinsik/minecraft-dynmap-timemachine/
