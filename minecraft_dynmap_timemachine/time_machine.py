@@ -38,7 +38,7 @@ class TimeMachine(object):
                 try:
                     img_data = download(img_url, True)
                 except Exception as e:
-                    logging.info('Unable to download "%s": %s', img_url, str(e))
+                    logging.info('XUnable to download "%s": %s', img_url, str(e))
 
                     if img_format == "png":
                         logging.info('Retrying with .jpg for [%d, %d]', x, y)
