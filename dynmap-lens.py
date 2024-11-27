@@ -8,9 +8,9 @@ import time
 import os
 from PIL import Image
 
-import minecraft_dynmap_timemachine.dynmap as dynmap
-import minecraft_dynmap_timemachine.time_machine as time_machine
-import minecraft_dynmap_timemachine.projection as projection
+import dynmap_lens.dynmap as dynmap
+import dynmap_lens.time_machine as time_machine
+import dynmap_lens.projection as projection
 
 
 if __name__ == '__main__':
