@@ -10,8 +10,8 @@ This is a scaled down and croped image form original `20736 x 13824px`. You can 
 
 List of all parameter is as follows:
 
-    $ dynmap-timemachine.py -h
-    usage: dynmap-timemachine.py [-h] [--list-worlds] [--list-maps] [-t [THRESHOLD]] [-q] [-v]
+    $ dynmap-lens.py -h
+    usage: dynmap-lens.py [-h] [--list-worlds] [--list-maps] [-t [THRESHOLD]] [-q] [-v]
                    base_url [world] [map] [center] [boundary_size] [zoom] [dest]
     
     positional arguments:
@@ -36,7 +36,7 @@ List of all parameter is as follows:
 
 Most easily install using `pip`:
 
-    $ pip install dynmap_timemachine
+    $ pip install dynmap_lens
 
 ## 1. Example - capture one large image
 
@@ -46,7 +46,7 @@ Let's say we want to download a `20736x13824`px map (286 Mpx image) from [map.ma
 1. **First see what worlds are available and what's the name of the world that we want**
 
    ```
-   $ dynmap-timemachine.py --list-worlds http://map.majncraft.cz/
+   $ dynmap-lens.py --list-worlds http://map.majncraft.cz/
    world - Svět Majncraft | Overworld
    world_space - Vesmír | Space
    world_nether - Nether Reloaded
@@ -57,7 +57,7 @@ Let's say we want to download a `20736x13824`px map (286 Mpx image) from [map.ma
 2. **Then list all maps avaialble for this world**
 
    ```
-   $ dynmap-timemachine.py --list-maps http://map.majncraft.cz/ world
+   $ dynmap-lens.py --list-maps http://map.majncraft.cz/ world
    surface - Prostorová - Den
    surface_night - Prostorová - Noc
    populated - Osídlení světa - prostorové
@@ -72,7 +72,7 @@ Let's say we want to download a `20736x13824`px map (286 Mpx image) from [map.ma
    Check your coordinates on Dynmap or simply walk in Minecraft at the position that you want to capture and press F3 to see what are your Minecraft's coordinates. Then make a test image to make sure that the position captured by `minecraft-dynmap-timelapse` is correct:
    
    ```
-   $ dynmap-timemachine.py http://map.majncraft.cz/ world surface \
+   $ dynmap-lens.py http://map.majncraft.cz/ world surface \
        [3300,65,-2630] [3,2] 0 majncraft.test.png
    ```
    
@@ -95,7 +95,7 @@ Let's say we want to download a `20736x13824`px map (286 Mpx image) from [map.ma
    Finally, we can make the full size image:
    
    ```
-   $ dynmap-timemachine.py -v http://map.majncraft.cz/ world surface \
+   $ dynmap-lens.py -v http://map.majncraft.cz/ world surface \
        [3300,65,-2630] [81,54] 0 majncraft.3320.full.png
    ```
    
@@ -119,10 +119,10 @@ You can ideally schedule to run this script every few minutes when you're buildi
    $ mkdir images
    ```
    
-   2. **Run `dynmap-timemachine.py` periodically (eg. with `cron`)** 
+   2. **Run `dynmap-lens.py` periodically (eg. with `cron`)** 
    
    ```
-   $ dynmap-timemachine.py -v http://map.majncraft.cz/ world surface \
+   $ dynmap-lens.py -v http://map.majncraft.cz/ world surface \
        [3300,65,-2630] [4,3] 0 images/
    ```
    
