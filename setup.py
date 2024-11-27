@@ -14,13 +14,15 @@ def readme():
         f.write(rst_text)
 
 setup(
-    name='dynmap_timemachine',
-    version='0.9.5',
-    description='Create extremely large images from Minecraft server\'s Dynmap plugin.',
+    name='dynmap_lens',
+    version='1.0.0',
+    description='Capture the contents of a Minecraft server\'s Dynmap. (Fork of dynmap_timemachine.)',
     long_description=readme(),
     url='https://github.com/martinsik/minecraft-dynmap-timemachine',
-    author='Martin Sikora',
-    author_email='martin.sikora.ahoj@gmail.com',
+    # Note: This package is based on the work of Martin Sikora's dynmap_timemachine.
+    # https://github.com/martinsik/minecraft-dynmap-timemachine/
+    author='AtomicAirin',
+    author_email='',
     license='MIT',
     packages=find_packages(exclude=['tests*']),
     classifiers=[
