@@ -41,6 +41,6 @@ setup(
     tests_require=[
         'nose',
     ],
-    scripts=['dynmap-timemachine.py'],
+    scripts=['dynmap-lens.py'],
     test_suite='tests',
 )
