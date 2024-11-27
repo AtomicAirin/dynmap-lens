@@ -26,19 +26,30 @@ class TimeMachine(object):
         total_tiles = len(range(from_tile.x, to_tile.x, zoomed_scale)) * len(range(from_tile.y, to_tile.y, zoomed_scale))
         processed = 0
 
+        img_format = "png"
         for x in range(from_tile.x, to_tile.x, zoomed_scale):
             for y in range(from_tile.y, to_tile.y, zoomed_scale):
-                img_rel_path = map.image_url(projection.TileLocation(x, y, t_loc.zoom))
+                img_rel_path = map.image_url(TileLocation(x, y, t_loc.zoom), img_format)
                 img_url = self._dm_map.url + img_rel_path
 
                 processed += 1
                 logging.info('tile %d/%d [%d, %d]', processed, total_tiles, x, y)
 
                 try:
-                    img_data = simple_downloader.download(img_url, True)
+                    img_data = download(img_url, True)
                 except Exception as e:
                     logging.info('Unable to download "%s": %s', img_url, str(e))
-                    continue
+
+                    if img_format == "png":
+                        logging.info('Retrying with .jpg for [%d, %d]', x, y)
+                        img_url = img_url[:-3] + "jpg"
+
+                        try:
+                            img_data = download(img_url, True)
+                            img_format = "jpg"
+                        except Exception as e:
+                            logging.info('Unable to download "%s": %s', img_url, str(e))
+                            continue
 
                 stream = io.BytesIO(img_data)
                 im = Image.open(stream)
